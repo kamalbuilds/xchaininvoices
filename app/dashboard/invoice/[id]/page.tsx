@@ -15,9 +15,9 @@ import { Button } from '~/components/ui/button';
 import {
   Erc777Balance,
   InvoicePDFCreated,
-_com  type InvoicePDFCreatedProps,
+ type InvoicePDFCreatedProps,
   Payer,
-} from '../../ponents';
+} from '../../dashboard-components';
 
 import { CircleCheckBig } from 'lucide-react';
 
@@ -28,7 +28,7 @@ interface Params {
 const renderPDF = async (props: InvoicePDFCreatedProps) => {
   const { pdf } = await import('@react-pdf/renderer');
   const { InvoicePDFCreated: PDF } = await import(
-    '../../dashboard-components/invoice-pdf'
+    '../../dashboard-components/invoicepdf'
   );
   // @ts-expect-error -- TS CONVERSION ERROR
   return pdf(createElement(PDF, props)).toBlob();
@@ -54,7 +54,7 @@ const InvoicePage = ({ params: { id } }: Params) => {
   const requestData = request.getData();
 
   const userType = () => {
-    if (address === requestData.reciever?.value) {
+    if (address === requestData.payee?.value) {
       return 'reciever';
     } else if (requestData.payer?.value === address) {
       return 'payer';
