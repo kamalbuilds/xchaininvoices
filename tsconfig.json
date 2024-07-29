@@ -5,7 +5,13 @@
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "checkJs": true,
-    "lib": ["dom", "dom.iterable", "ES2022", "ES2023", "ESNext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "ES2022",
+      "ES2023",
+      "ESNext"
+    ],
     "noEmit": true,
     "module": "ESNext",
     "jsx": "preserve",
@@ -21,7 +27,11 @@
       "~/*": [
         "./*"
       ]
-    }
+    },
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true
   },
   "include": [
     "svgr.d.ts",
@@ -31,8 +41,9 @@
     "**/*.cjs",
     "**/*.js",
     "next.config.mjs",
-    "env.mjs"
-  ],
+    "env.mjs",
+    ".next/types/**/*.ts"
+, "app/swap/page.jsx"  ],
   "exclude": [
     "node_modules"
   ]

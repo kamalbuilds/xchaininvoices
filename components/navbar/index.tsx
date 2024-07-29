@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 import React from 'react';
 
-import Logo from 'public/logo.svg';
+// import Logo from 'public/logo.svg';
 
 import { Button } from '../ui/button';
 import { ConnectButton } from './connect-button';
@@ -23,12 +23,12 @@ export const Navbar = () => {
     }}>
       <div className='mx-auto flex h-full items-center justify-between px-4 sm:px-8'>
         <Link className='flex flex-row items-center gap-2' href='/'>
-          <Image
+          {/* <Image
             alt='XChainInvoices'
             height={32}
             src={Logo as unknown as string}
             width={32}
-          />
+          /> */}
           <div className='text-2xl font-semibold'>XChainInvoices</div>
         </Link>
         <div className='flex flex-row items-center gap-2'>
